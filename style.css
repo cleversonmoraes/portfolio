@@ -25,7 +25,7 @@ a {
 .logo {
     color: white;
 }
-.options {
+.options a {
     padding: 20px;
     color: white;
     font-size: 24px;
@@ -146,6 +146,30 @@ a {
     color: white;
 }
 
+/* MENU HAMBURGUER */
+
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+.hamburguer::after,
+.hamburguer::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+
+    position: relative;
+    transition: 0.3s;
+}
+
+
 
 
 /* KEYFRAMES */
@@ -172,4 +196,64 @@ a {
         opacity: 1;
         clip-path: inset(0% 0% 0% 0%);
     }
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+    .hamburguer {
+        display: block;
+        z-index: 1;
+    }
+
+    .containerOptions {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #3E3E5E;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-in-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .containerOptions a {
+        font-size: 24px;
+        opacity: 1;
+    }
+
+
+    .containerHeader.active .containerOptions {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .containerHeader.active .containerOptions {
+        opacity: 1;
+    }
+
+    .containerHeader.active .hamburguer {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .containerHeader.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    .containerHeader.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    
 }
