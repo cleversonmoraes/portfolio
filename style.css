@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #3e3e5e;
+    background: linear-gradient(to bottom right, #34495e, #16a085);
 }
 
 a {
@@ -15,7 +15,7 @@ a {
 /* HEADER */
 .containerHeader {
     display: flex;
-    background-color: #3e3e5e;
+    background: linear-gradient(to bottom right, #34495e, #16a085);
     padding: 20px;
     justify-content: space-between;
     align-items: center;
@@ -126,7 +126,7 @@ a {
 /* FOOTER */
 
 .containerFooter {
-    background-color: #3e3e5e;
+    background: linear-gradient(to bottom right, #34495e, #16a085);
     border-top: 2px solid white;
     display: flex;
     margin-top: 150px;
